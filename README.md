@@ -1,46 +1,152 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# React Template
 
-In the project directory, you can run:
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![i18next](https://img.shields.io/badge/i18next-26A69A?style=for-the-badge&logo=i18next&logoColor=white)
+![React Query](https://img.shields.io/badge/React%20Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
+![Yarn](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)
+![License](https://img.shields.io/badge/License-UNLICENSED-green?style=for-the-badge)
 
-### `npm start`
+This project is a React template designed to accelerate development by providing essential features such as state management, internationalization, data fetching, navigation, and UI components with Chakra UI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Created using the default components provided in the project.
 
-### `npm test`
+### Welcome Screen
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./read-me-assets/welcome.png" alt="Welcome Screen" width="300" height="auto">
 
-### `npm run build`
+### Login Screen
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./read-me-assets/login.png" alt="Login Screen" width="300" height="auto">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Register Screen
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="./read-me-assets/register.png" alt="Register Screen" width="300" height="auto">
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **🌍 Internationalization (i18n)**
+  - Multi-language support using `react-i18next` for seamless localization.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **🗃️ State Management with Redux**
+  - Centralized state management for efficient global state access and updates.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **🔍 Data Fetching with React Query**
+  - Optimized data fetching, caching, and synchronization.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **🧭 Navigation**
+  - Smooth and intuitive navigation using `react-router-dom`.
 
-## Learn More
+- **⚛️ Component-Based Architecture**
+  - Modular design with reusable UI components and consistent styling using Chakra UI.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **📦 Common Utilities**
+  - Helper functions and utilities for streamlined development.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **🔗 Axios Management**
+  - Configurable API requests using Axios with built-in error handling and response management.
+
+- **🌐 WebSocket Management**
+  - Real-time communication support using WebSockets.
+
+- **🍪 Cookie Management**
+  - Simplified management of cookies for authentication and user sessions.
+
+- **🔒 Authentication**
+  - User authentication and registration with secure token management.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (v14 or higher)
+- Yarn
+- A code editor (e.g., VSCode)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone git@github.com:ToniDarodda/react-template.git
+   cd react-template
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   yarn install
+   ```
+
+3. **Configure environment variables:**
+
+   Update the `.env` file in the root directory with your configuration settings:
+
+   ```sh
+   REACT_APP_API_URL='https://your-api-url.com'
+   REACT_APP_SOCKET_URL='https://your-socket-url.com'
+   ```
+
+### Running the Application
+
+1. **Start the development server:**
+
+   ```sh
+   yarn start
+   ```
+
+2. **Open the application:**
+
+   The app will be available at `http://localhost:3000` in your web browser.
+
+
+## 🧪 Testing
+
+To run the tests, use the following command:
+
+```sh
+yarn test
+```
+
+## 🛠️ Scripts
+
+- **🧹 Format code using Prettier:** `yarn format`
+- **🏃‍♂️ Start the application:** `yarn start`
+- **🔍 Lint the code using ESLint:** `yarn lint`
+- **🧪 Run the tests:** `yarn test`
+- **🚀 Run end-to-end tests:** `yarn test:e2e`
+
+## 📜 License
+
+There is no license, you're free to use it.
+
+## 👤 Author
+
+[Toni Da Rodda](mailto:toni.da.rodda.pro@gmail.com)
+
+## 🛠️ Icons
+
+- **🚀 Deployment**
+- **⚙️ Configuration**
+- **📄 Documentation**
+- **🔧 Maintenance**
+- **🔒 Security**
+- **📫 Email Integration**
+- **📈 Performance Optimization**
+- **⚡ Gain Time**
+
+---
+
+Feel free to contribute to this project by submitting issues or pull requests.
+
+For any questions or support, please contact [Toni Da Rodda](mailto:toni.da.rodda.pro@gmail.com).
+
+---
+
