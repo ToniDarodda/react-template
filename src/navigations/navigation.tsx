@@ -1,24 +1,28 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import {
-    WelcomeScreen,
     LoginScreen,
     RegisterScreen,
     HomeScreen,
+    WelcomeScreen,
 } from "../pages";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <WelcomeScreen />,
+        element: <Navigate to="/sign-up" replace={true} />,
+    },
+    {
+        path: "/sign-up",
+        element: <RegisterScreen />,
     },
     {
         path: "/sign-in",
         element: <LoginScreen />,
     },
     {
-        path: "/sign-up",
-        element: <RegisterScreen />,
+        path: "/welcome",
+        element: <WelcomeScreen />,
     },
     {
         path: "/home",
