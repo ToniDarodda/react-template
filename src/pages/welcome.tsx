@@ -1,8 +1,9 @@
+import { HStack } from "@chakra-ui/react";
 import React from "react";
 
 function Welcome() {
     return (
-        <p>Welcome</p>
+        <HStack w={'100%'} backgroundColor={'white'} h={'50px'}>Welcome</HStack>
     )
 }
 

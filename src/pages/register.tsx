@@ -1,8 +1,9 @@
+import { HStack } from "@chakra-ui/react";
 import React from "react";
 
 function Register() {
     return (
-        <p>Register</p>
+        <HStack w={'100%'} backgroundColor={'white'} h={'50px'}>Register</HStack>
     )
 }
 
