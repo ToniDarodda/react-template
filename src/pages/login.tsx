@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button, HStack, Image, Input, InputGroup, InputRightElement, Text, VStack } from "@chakra-ui/react";
+import {
+    Button,
+    HStack,
+    Image,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Text,
+    VStack,
+} from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -12,32 +21,32 @@ function Login() {
 
     const { mutate: login, isPending, isSuccess } = useUserLogin();
 
-    const [show, setShow] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false);
 
-    const {
-        register,
-        handleSubmit,
-    } = useForm<FormLogin>()
-
+    const { register, handleSubmit } = useForm<FormLogin>();
 
     const onSubmit: SubmitHandler<FormLogin> = (data) => {
         login(data);
-    }
+    };
 
-    const handleClick = () => setShow(!show)
+    const handleClick = () => setShow(!show);
 
     const handleRedirectSignUp = () => {
         navigate("/sign-up");
     };
 
     useEffect(() => {
-        if (isSuccess) navigate('/home');
-    }, [isSuccess, navigate])
-
+        if (isSuccess) navigate("/home");
+    }, [isSuccess, navigate]);
 
     return (
         <HStack w={"100%"} h={"100vh"}>
-            <VStack flex={1} h={"100%"} borderRight={"1px solid #F5F5F5"}>
+            <VStack
+                flex={1}
+                h={"100%"}
+                borderRight={"1px solid #F5F5F5"}
+                display={{ sm: "none", md: "none", lg: "flex" }}
+            >
                 <Image src="/bg3.jpg" objectFit={"cover"} minH={"100%"} minW={"100%"} />
             </VStack>
             <VStack flex={1} h={"100%"} justifyContent={"center"}>
@@ -67,21 +76,28 @@ function Login() {
                             _hover={{
                                 border: "1px solid #00cc9d",
                             }}
-                            {...register('email', { required: true })}
+                            {...register("email", { required: true })}
                         />
                     </VStack>
 
                     <VStack w={"100%"} alignItems={"flex-start"}>
-                        <InputGroup size='md'>
+                        <InputGroup size="md">
                             <Input
-                                pr='4.5rem'
-                                type={show ? 'text' : 'password'}
-                                placeholder='Enter password'
-                                {...register('password', { min: 8, required: true })}
+                                pr="4.5rem"
+                                type={show ? "text" : "password"}
+                                placeholder="Enter password"
+                                {...register("password", { min: 8, required: true })}
                             />
-                            <InputRightElement width='4.5rem'>
-                                <Button h='1.75rem' size='sm' backgroundColor={'white'} border={'1px solid #F6F6F6'} _hover={{ backgroundColor: '#00cc9d', color: 'white' }} onClick={handleClick}>
-                                    {show ? 'Hide' : 'Show'}
+                            <InputRightElement width="4.5rem">
+                                <Button
+                                    h="1.75rem"
+                                    size="sm"
+                                    backgroundColor={"white"}
+                                    border={"1px solid #F6F6F6"}
+                                    _hover={{ backgroundColor: "#00cc9d", color: "white" }}
+                                    onClick={handleClick}
+                                >
+                                    {show ? "Hide" : "Show"}
                                 </Button>
                             </InputRightElement>
                         </InputGroup>
