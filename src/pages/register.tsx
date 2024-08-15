@@ -146,7 +146,7 @@ function Register() {
                             fontWeight={"bold"}
                             onClick={handleRedirectSignIn}
                         >
-                            {t('text_sign_up_key')}
+                            {t('text_sign_in_key')}
                         </Text>
                     </HStack>
                 </VStack>
