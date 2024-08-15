@@ -1,4 +1,13 @@
-import { Button, HStack, Image, Input, InputGroup, InputRightElement, Text, VStack } from "@chakra-ui/react";
+import {
+    Button,
+    HStack,
+    Image,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Text,
+    VStack,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +15,9 @@ import { useNavigate } from "react-router-dom";
 function Register() {
     const navigate = useNavigate();
 
-    const [show, setShow] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false);
 
-    const handleClick = () => setShow(!show)
+    const handleClick = () => setShow(!show);
 
     const handleRedirectSignIn = () => {
         navigate("/sign-in");
@@ -16,7 +25,12 @@ function Register() {
 
     return (
         <HStack w={"100%"} h={"100vh"}>
-            <VStack flex={1} h={"100%"} borderRight={"1px solid #F5F5F5"}>
+            <VStack
+                flex={1}
+                h={"100%"}
+                borderRight={"1px solid #F5F5F5"}
+                display={{ sm: "none", md: "none", lg: "flex" }}
+            >
                 <Image src="/bg3.jpg" objectFit={"cover"} minH={"100%"} minW={"100%"} />
             </VStack>
             <VStack flex={1} h={"100%"} justifyContent={"center"}>
@@ -67,15 +81,22 @@ function Register() {
                         <Text fontSize={"14px"} color={"gray.500"}>
                             Enter your password.
                         </Text>
-                        <InputGroup size='md'>
+                        <InputGroup size="md">
                             <Input
-                                pr='4.5rem'
-                                type={show ? 'text' : 'password'}
-                                placeholder='Enter password'
+                                pr="4.5rem"
+                                type={show ? "text" : "password"}
+                                placeholder="Enter password"
                             />
-                            <InputRightElement width='4.5rem'>
-                                <Button h='1.75rem' size='sm' backgroundColor={'white'} border={'1px solid #F6F6F6'} _hover={{ backgroundColor: '#00cc9d', color: 'white' }} onClick={handleClick}>
-                                    {show ? 'Hide' : 'Show'}
+                            <InputRightElement width="4.5rem">
+                                <Button
+                                    h="1.75rem"
+                                    size="sm"
+                                    backgroundColor={"white"}
+                                    border={"1px solid #F6F6F6"}
+                                    _hover={{ backgroundColor: "#00cc9d", color: "white" }}
+                                    onClick={handleClick}
+                                >
+                                    {show ? "Hide" : "Show"}
                                 </Button>
                             </InputRightElement>
                         </InputGroup>
