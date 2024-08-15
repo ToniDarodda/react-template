@@ -1,11 +1,12 @@
 {
-    "text_sign_in_key": "Sign in",
-    "text_enter_details_key": "Enter your details to get sign in to your account!",
+    "text_sign_up_key": "Sign up",
+    "text_enter_details_key": "Enter your details to get sign up to your account!",
     "text_email_key": "Enter your email to get started.",
-    "text_or_sign_in_key": "Or sign in with",
-    "text_sign_with_google": "Sign in with Google",
-    "text_no_account_yet": "Didn't have an account yet?",
-    "text_already_have_account": "Sign up",
-    "placeholder_email": "Enter your email...",
-    "placeholder_password": "Enter your password..."
+    "text_or_sign_in_key": "Or sign up with",
+    "text_sign_with_google": "Sign up with Google",
+    "text_already_account_yet": "Already have an account yet?",
+    "text_placeholder_input_name": "Enter your full name...",
+    "text_placeholder_input_password_name": "Enter your password...",
+    "placeholder_email": "Enter your full name.",
+    "placeholder_password": "Enter your password."
 }
