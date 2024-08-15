@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
+import './utils/i18n';
 
 import { store } from "./stores/app.store";
 import { RouterProvider } from "react-router-dom";
