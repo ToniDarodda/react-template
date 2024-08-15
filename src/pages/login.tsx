@@ -1,18 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, HStack, Image, Input, InputGroup, InputRightElement, Text, VStack } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+import { useUserLogin } from "../queries/user";
+import { FormLogin } from "../types/forms/login";
 
 function Login() {
     const navigate = useNavigate();
 
+    const { mutate: login, isPending, isSuccess } = useUserLogin();
+
     const [show, setShow] = useState<boolean>(false)
+
+    const {
+        register,
+        handleSubmit,
+    } = useForm<FormLogin>()
+
+
+    const onSubmit: SubmitHandler<FormLogin> = (data) => {
+        login(data);
+    }
 
     const handleClick = () => setShow(!show)
 
     const handleRedirectSignUp = () => {
         navigate("/sign-up");
     };
+
+    useEffect(() => {
+        if (isSuccess) navigate('/home');
+    }, [isSuccess, navigate])
+
 
     return (
         <HStack w={"100%"} h={"100vh"}>
@@ -46,6 +67,7 @@ function Login() {
                             _hover={{
                                 border: "1px solid #00cc9d",
                             }}
+                            {...register('email', { required: true })}
                         />
                     </VStack>
 
@@ -55,6 +77,7 @@ function Login() {
                                 pr='4.5rem'
                                 type={show ? 'text' : 'password'}
                                 placeholder='Enter password'
+                                {...register('password', { min: 8, required: true })}
                             />
                             <InputRightElement width='4.5rem'>
                                 <Button h='1.75rem' size='sm' backgroundColor={'white'} border={'1px solid #F6F6F6'} _hover={{ backgroundColor: '#00cc9d', color: 'white' }} onClick={handleClick}>
@@ -69,6 +92,8 @@ function Login() {
                         fontSize={"14px"}
                         backgroundColor={"#00cc9d"}
                         color={"white"}
+                        isLoading={isPending}
+                        onClick={handleSubmit(onSubmit)}
                     >
                         Sign in
                     </Button>

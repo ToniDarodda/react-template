@@ -33,4 +33,5 @@ export const useGetUser = () =>
   useQuery({
     queryKey: [MutationKeyGetUser],
     queryFn: userService.GetUserInfo,
+    retry: 0,
   });
