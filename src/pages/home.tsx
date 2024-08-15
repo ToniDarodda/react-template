@@ -1,9 +1,13 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
+import { LayoutStack } from "../components/layout";
 
 function Home() {
+
     return (
-        <HStack w={'100%'} backgroundColor={'white'} h={'50px'}>Home</HStack>
+        <LayoutStack>
+            <HStack w={'100%'} backgroundColor={'white'} h={'50px'}>Home</HStack>
+        </LayoutStack>
     )
 }
 

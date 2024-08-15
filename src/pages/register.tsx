@@ -1,14 +1,26 @@
-import { Button, HStack, Image, Input, InputGroup, InputRightElement, Text, VStack } from "@chakra-ui/react";
+import {
+    Button,
+    HStack,
+    Image,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Text,
+    VStack,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
+    const { t } = useTranslation('register');
+
     const navigate = useNavigate();
 
-    const [show, setShow] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false);
 
-    const handleClick = () => setShow(!show)
+    const handleClick = () => setShow(!show);
 
     const handleRedirectSignIn = () => {
         navigate("/sign-in");
@@ -16,13 +28,18 @@ function Register() {
 
     return (
         <HStack w={"100%"} h={"100vh"}>
-            <VStack flex={1} h={"100%"} borderRight={"1px solid #F5F5F5"}>
+            <VStack
+                flex={1}
+                h={"100%"}
+                borderRight={"1px solid #F5F5F5"}
+                display={{ sm: "none", md: "none", lg: "flex" }}
+            >
                 <Image src="/bg3.jpg" objectFit={"cover"} minH={"100%"} minW={"100%"} />
             </VStack>
             <VStack flex={1} h={"100%"} justifyContent={"center"}>
                 <VStack w={"500px"} gap={"20px"}>
                     <Text fontSize={"28"} fontWeight={"bold"}>
-                        Sign up
+                        {t('text_sign_up_key')}
                     </Text>
                     <Text
                         alignSelf={"center"}
@@ -31,12 +48,12 @@ function Register() {
                         color={"black"}
                         fontWeight={"500"}
                     >
-                        Enter your details to get sign up to your account!
+                        {t('text_enter_details_key')}
                     </Text>
 
                     <VStack w={"100%"} alignItems={"flex-start"}>
                         <Text fontSize={"14px"} color={"gray.500"}>
-                            Enter your email to get started.
+                            {t('text_email_key')}
                         </Text>
                         <Input
                             placeholder="Enter your email..."
@@ -52,10 +69,10 @@ function Register() {
 
                     <VStack w={"100%"} alignItems={"flex-start"}>
                         <Text fontSize={"14px"} color={"gray.500"}>
-                            Enter your full name.
+                            {t('placeholder_email')}
                         </Text>
                         <Input
-                            placeholder="Enter your full name..."
+                            placeholder={t('text_placeholder_input_name')}
                             focusBorderColor={"#00cc9d"}
                             _hover={{
                                 border: "1px solid #00cc9d",
@@ -65,17 +82,24 @@ function Register() {
 
                     <VStack w={"100%"} alignItems={"flex-start"}>
                         <Text fontSize={"14px"} color={"gray.500"}>
-                            Enter your password.
+                            {t('placeholder_password')}
                         </Text>
-                        <InputGroup size='md'>
+                        <InputGroup size="md">
                             <Input
-                                pr='4.5rem'
-                                type={show ? 'text' : 'password'}
-                                placeholder='Enter password'
+                                pr="4.5rem"
+                                type={show ? "text" : "password"}
+                                placeholder={t('text_placeholder_input_password_name')}
                             />
-                            <InputRightElement width='4.5rem'>
-                                <Button h='1.75rem' size='sm' backgroundColor={'white'} border={'1px solid #F6F6F6'} _hover={{ backgroundColor: '#00cc9d', color: 'white' }} onClick={handleClick}>
-                                    {show ? 'Hide' : 'Show'}
+                            <InputRightElement width="4.5rem">
+                                <Button
+                                    h="1.75rem"
+                                    size="sm"
+                                    backgroundColor={"white"}
+                                    border={"1px solid #F6F6F6"}
+                                    _hover={{ backgroundColor: "#00cc9d", color: "white" }}
+                                    onClick={handleClick}
+                                >
+                                    {show ? "Hide" : "Show"}
                                 </Button>
                             </InputRightElement>
                         </InputGroup>
@@ -87,7 +111,7 @@ function Register() {
                         backgroundColor={"#00cc9d"}
                         color={"white"}
                     >
-                        Sign up
+                        {t('text_sign_up_key')}
                     </Button>
 
                     <HStack
@@ -97,7 +121,7 @@ function Register() {
                     >
                         <VStack borderBottom={"1px solid #F3F3F3"} w={"38%"} h={"10px"} />
                         <Text fontSize={"14px"} color={"gray.500"}>
-                            Or sign up with
+                            {t('text_or_sign_in_key')}
                         </Text>
                         <VStack borderBottom={"1px solid #F3F3F3"} w={"38%"} h={"10px"} />
                     </HStack>
@@ -110,11 +134,11 @@ function Register() {
                         iconSpacing={"8px"}
                         leftIcon={<FcGoogle size={"24px"} />}
                     >
-                        Sign up with Google
+                        {t('text_sign_with_google')}
                     </Button>
 
                     <HStack>
-                        <Text fontSize={"14px"}>Already have an account yet?</Text>
+                        <Text fontSize={"14px"}>{t('text_already_account_yet')}</Text>
                         <Text
                             fontSize={"14px"}
                             color={"#00cc9d"}
@@ -122,7 +146,7 @@ function Register() {
                             fontWeight={"bold"}
                             onClick={handleRedirectSignIn}
                         >
-                            Sign in
+                            {t('text_sign_up_key')}
                         </Text>
                     </HStack>
                 </VStack>

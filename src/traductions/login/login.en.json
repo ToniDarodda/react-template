@@ -1,0 +1,11 @@
+{
+    "text_sign_in_key": "Sign in",
+    "text_enter_details_key": "Enter your details to get sign in to your account!",
+    "text_email_key": "Enter your email to get started.",
+    "text_or_sign_in_key": "Or sign in with",
+    "text_sign_with_google": "Sign in with Google",
+    "text_no_account_yet": "Didn't have an account yet?",
+    "text_already_have_account": "Sign up",
+    "placeholder_email": "Enter your email...",
+    "placeholder_password": "Enter your password..."
+}
