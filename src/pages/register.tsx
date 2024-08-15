@@ -7,6 +7,7 @@ function Register() {
     const navigate = useNavigate();
 
     const [show, setShow] = useState<boolean>(false)
+
     const handleClick = () => setShow(!show)
 
     const handleRedirectSignIn = () => {

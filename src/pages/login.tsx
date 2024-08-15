@@ -1,10 +1,14 @@
-import React from "react";
-import { Button, HStack, Image, Input, Text, VStack } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Button, HStack, Image, Input, InputGroup, InputRightElement, Text, VStack } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
+
+    const [show, setShow] = useState<boolean>(false)
+
+    const handleClick = () => setShow(!show)
 
     const handleRedirectSignUp = () => {
         navigate("/sign-up");
@@ -46,16 +50,18 @@ function Login() {
                     </VStack>
 
                     <VStack w={"100%"} alignItems={"flex-start"}>
-                        <Text fontSize={"14px"} color={"gray.500"}>
-                            Enter your password.
-                        </Text>
-                        <Input
-                            placeholder="Enter your password"
-                            focusBorderColor={"#00cc9d"}
-                            _hover={{
-                                border: "1px solid #00cc9d",
-                            }}
-                        />
+                        <InputGroup size='md'>
+                            <Input
+                                pr='4.5rem'
+                                type={show ? 'text' : 'password'}
+                                placeholder='Enter password'
+                            />
+                            <InputRightElement width='4.5rem'>
+                                <Button h='1.75rem' size='sm' backgroundColor={'white'} border={'1px solid #F6F6F6'} _hover={{ backgroundColor: '#00cc9d', color: 'white' }} onClick={handleClick}>
+                                    {show ? 'Hide' : 'Show'}
+                                </Button>
+                            </InputRightElement>
+                        </InputGroup>
                     </VStack>
 
                     <Button
